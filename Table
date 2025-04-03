@@ -1,1 +1,161 @@
 
+Database => Hospital.mdf
+
+1.AddDepartment
+
+CREATE TABLE [dbo].[AddDepartment] (
+    [Id]             INT            IDENTITY (1, 1) NOT NULL,
+    [DepartmentName] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+2.BookAppointment
+
+CREATE TABLE [dbo].[BookAppointment] (
+    [Id]         INT            IDENTITY (1, 1) NOT NULL,
+    [Name]       NVARCHAR (MAX) NOT NULL,
+    [Email]      NVARCHAR (MAX) NOT NULL,
+    [Date]       NVARCHAR (MAX) NOT NULL,
+    [Time]       NVARCHAR (MAX) NOT NULL,
+    [Fever]      NVARCHAR (MAX) NOT NULL,
+    [Cough]      NVARCHAR (MAX) NOT NULL,
+    [Headache]   NVARCHAR (MAX) NOT NULL,
+    [Fatigue]    NVARCHAR (MAX) NOT NULL,
+    [Other]      NVARCHAR (MAX) NOT NULL,
+    [BloodGroup] NVARCHAR (MAX) NOT NULL,
+    [PhoneNo]    NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+3.Contact
+
+CREATE TABLE [dbo].[Contact] (
+    [Id]      INT            IDENTITY (1, 1) NOT NULL,
+    [Name]    NVARCHAR (MAX) NOT NULL,
+    [Email]   NVARCHAR (MAX) NOT NULL,
+    [Subject] NVARCHAR (MAX) NOT NULL,
+    [Message] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+4.Doctors
+
+CREATE TABLE [dbo].[Doctors] (
+    [Id]          INT            IDENTITY (1, 1) NOT NULL,
+    [Doc_Dept_Id] INT            NOT NULL,
+    [Name]        NVARCHAR (MAX) NOT NULL,
+    [Email]       NVARCHAR (MAX) NOT NULL,
+    [Degree]      NVARCHAR (MAX) NOT NULL,
+    [Speciality]  NVARCHAR (MAX) NOT NULL,
+    [Gender]      NVARCHAR (MAX) NOT NULL,
+    [Dob]         NVARCHAR (MAX) NOT NULL,
+    [Phone]       NVARCHAR (MAX) NOT NULL,
+    [Photo]       NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+5.Patients
+
+CREATE TABLE [dbo].[Patients] (
+    [Id]         INT            IDENTITY (1, 1) NOT NULL,
+    [Name]       NVARCHAR (MAX) NOT NULL,
+    [Email]      NVARCHAR (MAX) NOT NULL,
+    [Dob]        NVARCHAR (MAX) NOT NULL,
+    [BloodGroup] NVARCHAR (MAX) NOT NULL,
+    [PhoneNo]    NVARCHAR (MAX) NOT NULL,
+    [Gender]     NVARCHAR (MAX) NOT NULL,
+    [Mstatus]    NVARCHAR (MAX) NOT NULL,
+    [Address]    NVARCHAR (MAX) NOT NULL,
+    [InsCompany] NVARCHAR (MAX) NOT NULL,
+    [InsId]      NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+6.RegistrationAdmin
+
+CREATE TABLE [dbo].[RegistrationAdmin] (
+    [Id]             INT            IDENTITY (1, 1) NOT NULL,
+    [Username]       NVARCHAR (MAX) NOT NULL,
+    [Email]          NVARCHAR (MAX) NOT NULL,
+    [Password]       NVARCHAR (MAX) NOT NULL,
+    [DepartmentRole] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+7.RegistrationTable
+
+CREATE TABLE [dbo].[RegistrationTable] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Username] NVARCHAR (MAX) NOT NULL,
+    [Email]    NVARCHAR (MAX) NOT NULL,
+    [Password] NVARCHAR (MAX) NOT NULL,
+    [DeptRole] NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+8.Reviews
+
+CREATE TABLE [dbo].[Reviews] (
+    [Id]                  INT            IDENTITY (1, 1) NOT NULL,
+    [Doc_Dept_Id]         INT            NOT NULL,
+    [Doctor_Name_Id]      INT            NOT NULL,
+    [PatientName]         NVARCHAR (MAX) NOT NULL,
+    [EmailAddress]        NVARCHAR (MAX) NOT NULL,
+    [PhoneNo]             NVARCHAR (MAX) NOT NULL,
+    [DateOfVisit]         NVARCHAR (MAX) NOT NULL,
+    [TimeOfAppointment]   NVARCHAR (MAX) NOT NULL,
+    [Speciality]          NVARCHAR (MAX) NOT NULL,
+    [WaitingTime]         NVARCHAR (MAX) NOT NULL,
+    [DoctorFriendliness]  NVARCHAR (MAX) NOT NULL,
+    [HospitalCleanliness] NVARCHAR (MAX) NOT NULL,
+    [OverallExperience]   NVARCHAR (MAX) NOT NULL,
+    [Suggestion]          NVARCHAR (MAX) NOT NULL,
+    [AdditionalComments]  NVARCHAR (MAX) NOT NULL,
+    [AcceptTerm]          NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+
+================================================================================================================
+
+
+Database => Database1.mdf
+
+1.RegistrationTable
+
+CREATE TABLE [dbo].[RegistrationTable] (
+    [Id]              INT            IDENTITY (1, 1) NOT NULL,
+    [Name]            NVARCHAR (MAX) NOT NULL,
+    [EmailAddress]    NVARCHAR (MAX) NOT NULL,
+    [Password]        NVARCHAR (MAX) NOT NULL,
+    [ConfirmPassword] NVARCHAR (MAX) NOT NULL,
+    [City]            NVARCHAR (MAX) NOT NULL,
+    [Pincode]         NVARCHAR (MAX) NOT NULL,
+    [AppointmentDate] NVARCHAR (MAX) NOT NULL,
+    [AppointmentTime] NVARCHAR (MAX) NOT NULL,
+    [MobileNumber]    NVARCHAR (MAX) NOT NULL,
+    [Address]         NVARCHAR (MAX) NOT NULL,
+    [BloodGroup]      NVARCHAR (MAX) NOT NULL,
+    [Gender]          NVARCHAR (MAX) NOT NULL,
+    [Fever]           NVARCHAR (MAX) NOT NULL,
+    [Cough]           NVARCHAR (MAX) NOT NULL,
+    [Headache]        NVARCHAR (MAX) NOT NULL,
+    [Fatigue]         NVARCHAR (MAX) NOT NULL,
+    [Image]           NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+
+
+
